@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+      <div class="col-6">
+        <!--Formulaire Form_for Ruby fx Bootstrap-->
+        <div class="form">
+          <h2>S'inscrire</h2>
+          <!--Déclaration de début de fomulaire, désignation de l'action dans le controller-->
+          <%= form_for @user, url: {action: "create"} do |f| %>
+          <div class="form-group">
+          <%= f.label 'Prénom' %>
+          <%= f.text_field :first_name, class:"form-control", placeholder: "Prénom" %>
+          <!--Commentaire d'input-->
+          <small id=“emailHelp” class=“form-text text-muted”>Évite de mettre des espaces 😉</small>
+          </div>
+          <div class="form-group">
+          <%= f.label 'Nom' %>
+          <%= f.text_field :last_name, class:"form-control", placeholder: "Nom" %>
+          <!--Commentaire d'input-->
+          <small id=“emailHelp” class=“form-text text-muted”>Évite de mettre des espaces 😉</small>
+          </div>
+          <div class="form-group">
+          <%= f.label 'Email' %>
+          <%= f.text_field :email, type:"email", class:"form-control", placeholder: "email"  %>
+          <small id=“emailHelp” class=“form-text text-muted”>L’adresse e-mail doit être valide</small>
+        </div>
+        <div class="form-group">
+          <%= f.label 'Mot de passe' %>
+          <%= f.text_area :password_digest, class:"form-control", placeholder: "Mot de Passe"  %>
+        </div>
+          <%= f.submit "Créer mon compte", class: "btn btn-primary" %> <br>
+          <% end %>
+        </div>
+      </div>
+    <div class="col-3"></div>
+  </div>
+</div>
